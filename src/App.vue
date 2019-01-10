@@ -1,29 +1,28 @@
 <template lang="pug">
 .app
-  section.hero.is-primary.is-medium
-    .hero-head
-      navBar
+  navBar
+  section.hero.is-primary
     .hero-body
       .container
         h1.title FACULTAD DE CIENCIAS FÍSICO MATEMÁTICAS
         h2.subtitle UNIVERSIDAD AUTÓNOMA DE NUEVO LEÓN
     .hero-foot
-      nav.tabs.is-boxed
+      nav.tabs.is-boxed.is-hidden-touch
         .container
           ul
-            li.is-active
+            li(ref='1' @click='activeRouter(1)')
               router-link(to='/') INICIO
-            li
+            li(ref='2' @click='activeRouter(2)')
               router-link(to='/about') FACULTAD
-            li
+            li(ref='3' @click='activeRouter(3)')
               router-link(to='/home') LICENCIATURAS
-            li
+            li(ref='4' @click='activeRouter(4)')
               router-link(to='/about') ALUMNOS
-            li
+            li(ref='5' @click='activeRouter(5)')
               router-link(to='/about') PROFESORES
-            li
+            li(ref='6' @click='activeRouter(6)')
               router-link(to='/about') EXAFCFM
-            li
+            li(ref='7' @click='activeRouter(7)')
               router-link(to='/about') POSGRADO
   section.section
     .container
@@ -36,10 +35,17 @@ import navBar from '@/components/NavBar.vue'
 export default {
   components: {
     navBar
+  },
+  methods: {
+    activeRouter: function (element) {
+      Object.keys(this.$refs).forEach(key => {
+        this.$refs[key].className = 'inactive'
+      })
+      this.$refs[`${element}`].className = 'is-active'
+    }
   }
 }
 </script>
-
 
 <style lang="scss">
 @import "~bulma/sass/utilities/_all";
@@ -59,7 +65,7 @@ $colors: (
     "danger": ($danger, $danger-invert)
 );
 
-$link: $primary;
+$link: #00C4FF;
 $link-invert: $primary-invert;
 $link-focus-border: $primary;
 

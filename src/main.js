@@ -2,13 +2,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import VueSocketIO from 'vue-socket.io'
+//import VueSocketIO from 'vue-socket.io'
 import buefy from 'buefy'
 
 Vue.config.productionTip = false
 
 Vue.use(buefy)
-Vue.use(new VueSocketIO({
+/*Vue.use(new VueSocketIO({
   debug: true,
   connection: 'http://localhost:3000',
   vuex: {
@@ -16,7 +16,7 @@ Vue.use(new VueSocketIO({
     actionPrefix: 'SOCKET_',
     mutationPrefix: 'SOCKET_'
   }
-}))
+}))*/
 
 new Vue({
   router,
