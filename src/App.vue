@@ -5,28 +5,9 @@
     .hero-body
       .container
         h1.title FACULTAD DE CIENCIAS FÍSICO MATEMÁTICAS
-        h2.subtitle UNIVERSIDAD AUTÓNOMA DE NUEVO LEÓN
-    .hero-foot
-      nav.tabs.is-boxed.is-hidden-touch
-        .container
-          ul
-            li(ref='1' @click='activeRouter(1)')
-              router-link(to='/') INICIO
-            li(ref='2' @click='activeRouter(2)')
-              router-link(to='/about') FACULTAD
-            li(ref='3' @click='activeRouter(3)')
-              router-link(to='/home') LICENCIATURAS
-            li(ref='4' @click='activeRouter(4)')
-              router-link(to='/about') ALUMNOS
-            li(ref='5' @click='activeRouter(5)')
-              router-link(to='/about') PROFESORES
-            li(ref='6' @click='activeRouter(6)')
-              router-link(to='/about') EXAFCFM
-            li(ref='7' @click='activeRouter(7)')
-              router-link(to='/about') POSGRADO
+        h2.subtite UNIVERSIDAD AUTÓNOMA DE NUEVO LEÓN
   section.section
-    .container
-      router-view        
+    router-view        
 </template>
 
 <script>
@@ -35,14 +16,6 @@ import navBar from '@/components/NavBar.vue'
 export default {
   components: {
     navBar
-  },
-  methods: {
-    activeRouter: function (element) {
-      Object.keys(this.$refs).forEach(key => {
-        this.$refs[key].className = 'inactive'
-      })
-      this.$refs[`${element}`].className = 'is-active'
-    }
   }
 }
 </script>
@@ -68,6 +41,9 @@ $colors: (
 $link: #00C4FF;
 $link-invert: $primary-invert;
 $link-focus-border: $primary;
+
+$card-header-background-color: $primary;
+$card-header-color: $white;
 
 @import "~bulma";
 @import "~buefy/src/scss/buefy";

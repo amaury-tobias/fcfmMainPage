@@ -4,10 +4,12 @@ import router from './router'
 import store from './store'
 //import VueSocketIO from 'vue-socket.io'
 import buefy from 'buefy'
+import VueCarousel from 'vue-carousel'
 
 Vue.config.productionTip = false
 
 Vue.use(buefy)
+Vue.use(VueCarousel)
 /*Vue.use(new VueSocketIO({
   debug: true,
   connection: 'http://localhost:3000',
