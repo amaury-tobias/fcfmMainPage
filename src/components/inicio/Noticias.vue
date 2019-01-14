@@ -4,11 +4,11 @@
     p.card-header-title NOTICIAS
   .card-content
     carousel(
-      loop='true'
-      perPage='1'
-      autoplay='true'
-      autoplayHoverPause='true'
-      paginationPadding='3')
+      :loop='true'
+      :perPage='1'
+      :autoplay='true'
+      :autoplayHoverPause='true'
+      :paginationPadding='3')
       slide(v-for='noticia in noticias')
         a(:href='noticia.titulo').has-text-centered
           p.title.is-6 {{ noticia.titulo }}

@@ -1,10 +1,10 @@
 <template lang="pug">
 carousel(
-  loop='true'
-  perPage='1'
-  autoplay='true'
-  autoplayHoverPause='true'
-  paginationPadding='3')
+  :loop='true'
+  :perPage='1'
+  :autoplay='true'
+  :autoplayHoverPause='true'
+  :paginationPadding='3')
   slide(v-for='image in images')
     figure.image
       img(:src='image')

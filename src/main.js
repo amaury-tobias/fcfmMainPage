@@ -5,8 +5,12 @@ import store from './store'
 //import VueSocketIO from 'vue-socket.io'
 import buefy from 'buefy'
 import VueCarousel from 'vue-carousel'
+import axios from 'axios'
 
 Vue.config.productionTip = false
+Vue.prototype.$http = axios.create({
+  baseURL: 'https://jsonplaceholder.typicode.com'
+})
 
 Vue.use(buefy)
 Vue.use(VueCarousel)
