@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Home from './views/Home.vue'
-import Inicio from './views/Inicio.vue'
-
 Vue.use(Router)
 
 export default new Router({
@@ -14,17 +11,37 @@ export default new Router({
     {
       path: '/',
       name: 'inicio',
-      component: Inicio
+      component: () => import('./views/Inicio.vue')
     },
     {
-      path: '/home',
-      name: 'home',
-      component: Home
+      path: '/facultad',
+      name: 'facultad',
+      component: () => import('./views/Facultad.vue')
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/licenciaturas',
+      name: 'licenciaturas',
+      component: () => import('./views/Licenciaturas.vue')
+    },
+    {
+      path: '/alumnos',
+      name: 'alumnos',
+      component: () => import('./views/Alumnos.vue')
+    },
+    {
+      path: '/profesores',
+      name: 'profesores',
+      component: () => import('./views/Profesores.vue')
+    },
+    {
+      path: '/exafcfm',
+      name: 'exafcfm',
+      component: () => import('./views/Exafcfm.vue')
+    },
+    {
+      path: '/posgrado',
+      name: 'posgrado',
+      component: () => import('./views/Posgrado.vue')
     }
   ]
 })

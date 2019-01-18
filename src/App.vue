@@ -5,7 +5,7 @@
     .hero-body
       .container
         h1.title FACULTAD DE CIENCIAS FÍSICO MATEMÁTICAS
-        h2.subtite UNIVERSIDAD AUTÓNOMA DE NUEVO LEÓN
+        h2.subtitle UNIVERSIDAD AUTÓNOMA DE NUEVO LEÓN
   section.section
     router-view
 </template>
@@ -21,12 +21,13 @@ export default {
     const loadingComponent = this.$loading.open({
       container: null
     })
-    this.$http.get('/todos')
-    .then(response => console.log(response.data))
-    .catch(e => console.log(e))
-    .finally(() => {
-      loadingComponent.close()
-    })
+    this.$http
+      .get('/todos')
+      .then(response => console.log(response.data))
+      .catch(e => console.log(e))
+      .finally(() => {
+        loadingComponent.close()
+      })
   }
 }
 </script>
@@ -38,18 +39,18 @@ $primary: #0e3b65;
 $primary-invert: findColorInvert($primary);
 
 $colors: (
-    "white": ($white, $black),
-    "black": ($black, $white),
-    "light": ($light, $light-invert),
-    "dark": ($dark, $dark-invert),
-    "primary": ($primary, $primary-invert),
-    "info": ($info, $info-invert),
-    "success": ($success, $success-invert),
-    "warning": ($warning, $warning-invert),
-    "danger": ($danger, $danger-invert)
+  "white": ($white,$black),
+  "black": ($black,$white),
+  "light": ($light,$light-invert),
+  "dark": ($dark,$dark-invert),
+  "primary": ($primary,$primary-invert),
+  "info": ($info,$info-invert),
+  "success": ($success,$success-invert),
+  "warning": ($warning,$warning-invert),
+  "danger": ($danger,$danger-invert)
 );
 
-$link: #00C4FF;
+$link: #00c4ff;
 $link-invert: $primary-invert;
 $link-focus-border: $primary;
 
